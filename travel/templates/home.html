@@ -1,0 +1,29 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang = "kor">
+    <head>
+        <meta charset = "utf-8">
+        <title>Home</title>
+        <link rel="stylesheet" type = "text/css" href = "{% static 'travel/css/home.css'%}"/>
+    </head>
+    <body>
+        <header>
+            <div id="title"><h2>데이트의 모든 후기를 담다</h2></div>
+            <a href = "{% url 'new' %}">후기 작성하러 가기!</a>
+        </header>
+        <div id="main">
+            {%for lists in posts_list%}
+            <section>         
+                <div class="upper">
+                    <div class="list_title"><strong>{{lists.title}}</strong></div>
+                    <div class="list_date">{{lists.pub_date}}</div>
+                </div>
+                <div class="list_body">{{lists.body|linebreaks}}</div>
+            </section>
+            {%endfor%}
+        </div>
+        <footer>
+            <p>made by <Strong>HIGONY</Strong></p>
+        </footer>
+    </body>
+</html>
