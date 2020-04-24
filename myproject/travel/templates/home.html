@@ -15,7 +15,7 @@
             {%for lists in posts_list%}
             <section>         
                 <div class="upper">
-                    <a href="{% url 'detail' index=lists.pk %}">
+                    <a href="{% url 'detail' pk=lists.pk %}">
                     <div class="list_title"><strong>{{lists.title}}</strong></div>
                     </a>
             </section>

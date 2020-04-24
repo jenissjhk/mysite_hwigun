@@ -44,7 +44,10 @@ header h4{
 }
 
 #form{
-    height: 1600px;
+    background-color: lightyellow;
+    max-height: 800px;
+    border-radius: 20px;
+    margin: 30px;
 }
 .upper{
     border-bottom: thin dotted black;

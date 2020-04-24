@@ -1,5 +1,26 @@
-<h1>일기 수정하기</h1>
-    <form method="POST" class="post-form">{% csrf_token %}
-        {{form.as_p}}
-        <button type="submit" class = "save btn btn-default">Save</button>
-    </form>
+{% load static %}
+<!DOCTYPE html>
+<html lang = "kor">
+    <head>
+        <meta charset = "utf-8">
+        <title>writing</title>
+        <link rel="stylesheet" type = "text/css" href = "{% static 'travel/css/home.css'%}"/>
+    </head>
+
+    <body>
+        <header>
+        
+                <div id="title"><h2>데이트의 모든 후기를 담다</h2></div>
+                <p>후기 수정 중!</p>
+        </header>
+        <div id="form">
+            <form method="POST" class="post-form">{% csrf_token %}
+                {{form.as_p}}
+                <button type="submit" class = "save btn btn-default">Save</button>
+            </form>
+        </div>
+        <footer>
+            <p>made by <Strong>HIGONY</Strong></p>
+        </footer>
+    </body>
+</html>
