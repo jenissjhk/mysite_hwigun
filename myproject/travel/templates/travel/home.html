@@ -1,3 +1,5 @@
+{%extends 'travel/base.html'%}
+{%block content%}
 {% load static %}
 <!DOCTYPE html>
 <html lang = "kor">
@@ -8,7 +10,7 @@
     </head>
     <body>
         <header>
-            <div id="title"><h2>데이트의 모든 후기를 담다</h2></div>
+            <div id="title" class = "col-lg-6 col-12"><h2>여행의 모든 후기를 담다</h2></div>
             <a href = "{% url 'new' %}">후기 작성하러 가기!</a>
         </header>
         <div id="main">
@@ -25,4 +27,5 @@
             <p>made by <Strong>HIGONY</Strong></p>
         </footer>
     </body>
+    {%endblock%}
 </html>

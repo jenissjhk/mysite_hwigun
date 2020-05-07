@@ -7,7 +7,7 @@ from django.shortcuts import get_object_or_404
 
 def home(request):
     posts = Content.objects.all
-    return render(request, 'home.html', {'posts_list': posts})
+    return render(request, 'travel/home.html', {'posts_list': posts})
 
 def new(request):
     
@@ -22,7 +22,7 @@ def new(request):
     else:
         form = ContentForm()
 
-    return render(request, 'new.html', {'form': form})
+    return render(request, 'travel/new.html', {'form': form})
 
 def detail(request, pk):
     post = get_object_or_404(Content, pk=pk)
@@ -37,7 +37,7 @@ def detail(request, pk):
             return redirect('detail', pk=pk)
     else:
         comment_form = CommentForm()
-    return render(request, 'detail.html', {'post': post, 'comment_list': comment_list, 'comment_form': comment_form})
+    return render(request, 'travel/detail.html', {'post': post, 'comment_list': comment_list, 'comment_form': comment_form})
 
 
 def edit(request, pk):
@@ -52,7 +52,7 @@ def edit(request, pk):
             return redirect('detail', index=post.pk)
     else:
         form = ContentForm(instance=post)
-    return render(request, 'edit.html', {'form': form})
+    return render(request, 'travel/edit.html', {'form': form})
 
 def delete(request, pk):
     post = get_object_or_404(Content, pk=pk)
