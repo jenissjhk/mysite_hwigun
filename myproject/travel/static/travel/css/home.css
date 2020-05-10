@@ -1,28 +1,35 @@
+@font-face { font-family: 'Cafe24Oneprettynight'; src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_twelve@1.1/Cafe24Oneprettynight.woff') format('woff'); font-weight: normal; font-style: normal; }
+
 *{
     box-sizing: border-box;
+    font-family: 'Cafe24Oneprettynight', sans-serif;
+}
+.navbar{
+    line-height: 3.0;
+    font-size: 40px;
 }
 
 body{
     background-color: lightgray;
 }
 
-header{
-    height: 120px;
-    background-color: paleturquoise;
-    color: black;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    padding: 20px;
+
+header p{
+    font-size: 50px;
 }
 
-header a, header p{
-    margin-top: 50px;
+header a{
+    font-size: 30px;
+    color: white;
 }
 
+.carousel-caption{
+    padding-bottom: 200px;
+}
 
 #main{
     background-color: lightyellow;
+    height: 800px;
     max-height: 800px;
     overflow: scroll;
     margin: 30px;
@@ -35,10 +42,21 @@ header a, header p{
     padding: 20px;
 }
 
-#form{
+#home-img1{
+    background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url(../img/HomeBackground.jpg);
+}
+
+.home-img-display{
+    height: 90vh;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+#form .posts{
     background-color: lightyellow;
     max-height: 800px;
     margin: 30px;
+    padding: 10px;
 }
 .upper{
     border-bottom: thin dotted black;
@@ -61,6 +79,18 @@ header a, header p{
     max-height: 500px;
     overflow: scroll;
 }
+
+.each{
+    border: 0.5px dotted black;
+    margin: 3px;
+}
+
+#form .below_posts{
+    background-color: lightcyan;
+    padding: 30px;
+    margin: 30px;
+}
+
 footer{
     height: 200px;
     background-color: lightpink;
@@ -74,4 +104,11 @@ footer p{
     font-size: 30px;
     text-align: center;
     line-height: 200px;
+}
+
+.warning{
+    height: 400px;
+    text-align: center;
+    margin: auto auto;
+    padding-top: 200px;
 }

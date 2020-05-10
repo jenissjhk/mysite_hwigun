@@ -1,0 +1,27 @@
+{%extends 'travel/base.html'%}
+{%block content%}
+{% load static %}
+<!DOCTYPE html>
+<html lang = "kor">
+    <head>
+        <meta charset = "utf-8">
+        <title>Home</title>
+        <link rel="stylesheet" type = "text/css" href = "{% static 'travel/css/home.css'%}"/>
+    </head>
+    <body>
+        <div id="main">
+            {%for lists in posts_list%}
+            <section>         
+                <div class="upper">
+                    <a href="{% url 'detail' pk=lists.pk %}">
+                    <div class="list_title"><strong>{{lists.title}}</strong></div>
+                    </a>
+            </section>
+            {%endfor%}
+        </div>
+        <footer>
+            <p>made by <Strong>HIGONY</Strong></p>
+        </footer>
+    </body>
+    {%endblock%}
+</html>

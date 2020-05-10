@@ -6,8 +6,11 @@ from django.shortcuts import get_object_or_404
 # Create your views here.
 
 def home(request):
+    return render(request, 'travel/home.html')
+
+def lists(request):
     posts = Content.objects.all
-    return render(request, 'travel/home.html', {'posts_list': posts})
+    return render(request, 'travel/lists.html', {'posts_list': posts})
 
 def new(request):
     

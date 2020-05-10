@@ -16,13 +16,20 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 from travel import views
+import accounts.views
+from django.contrib.auth import views as auth_views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', views.home, name="home"),
+    path('lists/', views.lists, name="lists"),
     path('new/', views.new, name="new"),
     path('detail/<int:pk>', views.detail, name="detail"),
     path('edit/<int:pk>', views.edit, name = "edit"),
     path('detail/<int:pk>/delete', views.delete, name="delete"),
     path('detail/<int:pk>/comment/<int:comment_pk>/delete/', views.delete_comment, name="delete_comment"),
+    path('registration/register', accounts.views.register, name='register'),
+    path('registration/login', auth_views.LoginView.as_view(), {'template_name': 'registration/login.html'}, name="login"),
+    path('registration/logged_out', auth_views.LogoutView.as_view(), {'template_name': ''}, name='logout'),
 ]
+

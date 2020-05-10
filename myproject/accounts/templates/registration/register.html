@@ -1,0 +1,7 @@
+<h1>회원가입</h1>
+<form method="POST">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">여행 시작하기!</button><br><br>
+    <a href= "{% url 'home' %}">돌아가기</a>
+</form>
